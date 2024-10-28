@@ -22,7 +22,7 @@ import (
 )
 
 var (
-	adminURL, _ = url.Parse("http://localhost:4445")
+	adminURL, _ = url.Parse(os.Getenv("HYDRA_ADMIN"))
 	hydraClient = hydra.NewHTTPClientWithConfig(nil,
 		&hydra.TransportConfig{
 			Schemes:  []string{adminURL.Scheme},
